@@ -1,0 +1,15 @@
+{
+  "id": "CodeWriter.Localization",
+  "version": "0.0.1",
+  "authors": [ "VladV" ],
+  "owners": [ "VladV" ],
+  "description": "Localization system for Unity3D.",
+  "dependencies": { },
+  "files": [
+    {
+      "source": "Assets/CodeWriter.Localization/**/*",
+      "target": "$home$/Plugins/"
+    },
+    "$dependencies$"
+  ]
+}

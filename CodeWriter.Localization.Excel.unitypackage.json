@@ -1,0 +1,20 @@
+{
+  "id": "CodeWriter.Localization.Excel",
+  "version": "0.0.1",
+  "authors": [ "VladV" ],
+  "owners": [ "VladV" ],
+  "description": "Excel importer for CodeWriter.Localization.",
+  "dependencies": {
+    "CodeWriter.Localization": {
+      "version": ">=0.0.1",
+      "source": "github:vanifatovvlad/CodeWriter.Localization"
+    }
+  },
+  "files": [
+    {
+      "source": "Assets/CodeWriter.Localization.Excel/**/*",
+      "target": "$home$/Plugins/"
+    },
+    "$dependencies$"
+  ]
+}
