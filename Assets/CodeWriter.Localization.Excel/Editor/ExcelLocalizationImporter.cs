@@ -1,17 +1,20 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using UnityEditor;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace CodeWriter.Localization.Excel
 {
+    [CustomLocalizationImporter("Excel")]
     public sealed class ExcelLocalizationImporter : LocalizationImporter
     {
         [SerializeField]
-        private Object[] m_excelFiles;
+        private Object[] m_excelFiles = new Object[0];
 
         [SerializeField]
         private bool m_autoReimport = true;
@@ -23,7 +26,7 @@ namespace CodeWriter.Localization.Excel
 
         public string[] excelFilesPathes
         {
-            get { return m_excelFiles.Select(f => AssetDatabase.GetAssetPath(f)).ToArray(); }
+            get { return Array.ConvertAll(m_excelFiles, AssetDatabase.GetAssetPath); }
         }
 
         public bool autoReimport

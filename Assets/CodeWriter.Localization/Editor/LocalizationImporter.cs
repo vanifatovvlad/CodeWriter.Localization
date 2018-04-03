@@ -15,6 +15,16 @@ namespace CodeWriter.Localization
         void Import();
     }
 
+    public class CustomLocalizationImporterAttribute : Attribute
+    {
+        public string name { get; private set; }
+
+        public CustomLocalizationImporterAttribute(string name)
+        {
+            this.name = name;
+        }
+    }
+
     internal class NullImporter : ILocalizationImporter
     {
         public static readonly NullImporter Instance = new NullImporter();
